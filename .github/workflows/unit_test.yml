@@ -4,4 +4,4 @@ jobs:
   UnitTests:
     runs-on: ubuntu-latest
     steps:
-      - run: docker -v
+      - run: docker build -t prod_lce .
