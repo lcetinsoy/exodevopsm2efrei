@@ -14,3 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker build -t prod_lce .
+      - run: docker tag prod_lce lcetinsoy/prod:latest
+      - run: docker login -u lcetinsoy -p secrets.DOCKER_REGISTRY_PASSWORD
+      - run: docker push lcetinsoy/prod:latest
+      
